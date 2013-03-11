@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <stdbool.h>
 
-bool check( int n ) {
+bool div( int n ) {
 
-  for ( int i = 2 ; i < 20 ; i++ ) {
+	for ( int i = 11 ; i < 20 ; i++ ) {
 
 		if ( n % i != 0 ) return false ;
 
@@ -15,20 +15,15 @@ bool check( int n ) {
 
 int main ( int argc , char** argv ) {
 
-	int n = 2025 ;
+	int n = 2520 ;
 
 	while ( 1 ) {
 
-		if ( check(n) ) {
+		if ( div(n) ) { printf("%d\n",n) ; return 0 ; }
 
-			printf("%d :3\n",n) ;
-			return 0 ;
+		n += 2520 ;
 
-		}
-
-		n += 2025 ;
 	}
 
 	return 0 ;
-
 }
