@@ -1,4 +1,4 @@
-//Not working
+//UPDATE : Now Working
 
 #include <iostream>
 #include <string>
@@ -9,8 +9,10 @@ using namespace std ;
 
 string string_sum( string n1 , string n2 ) {
 
-	if ( n1.length() > n2.length() ) n2.insert( n2.begin() , '0' ) ;
-	else if ( n1.length() < n2.length() ) n1.insert( n1.begin() , '0' ) ;
+	int diff = n1.length() - n2.length() ;
+
+	if ( diff > 0 ) for ( int i = 0 ; i < diff ; i++ ) n2.insert(n2.begin(),'0') ;
+	else if ( diff < 0 ) for ( int i = 0 ; i > diff ; i-- ) n1.insert(n1.begin(),'0') ;
 
 	string tot(n1.length(), ' ') ;
 
@@ -18,8 +20,7 @@ string string_sum( string n1 , string n2 ) {
 
 		int res = ( n1[i] - '0' ) + ( n2[i] - '0' ) ;
 
-		cout << res << endl ;
-
+		
 		if ( res >= 10 && i == 0 ) {
 
 			tot[i] = (res-10)+'0' ;
@@ -35,8 +36,7 @@ string string_sum( string n1 , string n2 ) {
 		} 
 
 		else tot[i] = (res+'0') ;
-
-		cout << tot << endl ;
+		
 	}
 
 	return tot ;
