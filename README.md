@@ -1,4 +1,3 @@
-Eulero
-=================
+project-euler
 
-Some codes that I wrote for solve Project Euler's problems
+Solution to problems proposed by 'projecteuler.net'
